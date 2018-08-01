@@ -7,6 +7,43 @@
     <script src="cart.js"></script>
 </head>
 <body>
+<header>
+    <h1>Classic Cinema</h1>
 
+    <div id="user">
+        <div id="login">
+            <form id="loginForm">
+                <label for="loginUser">Username: </label>
+                <input type="text" name="loginUser" id="loginUser"><br>
+                <label for="loginPassword">Password: </label>
+                <input type="password" name="loginPassword" id="loginPassword"><br>
+                <input type="submit" id="loginSubmit" value="Login">
+            </form>
+        </div>
+
+        <div id="logout">
+            <p>Welcome, <span id="logoutUser"></span></p>
+            <form id="logoutForm">
+                <input type="submit" id="logoutSubmit" value="Logout">
+            </form>
+        </div>
+    </div>
+</header>
+
+<nav>
+
+    <ul>
+        <li> Home
+        <li> <a href="classic.html">Classics</a>
+        <li> <a href="scifi.html">Sci&nbsp;Fi</a>
+        <li> <a href="hitchcock.html">Hitchcock</a>
+            <hr>
+        <li><a href="contact.html">Contact</a></li>
+    </ul>
+
+</nav>
+<main>
+    <h2>Shopping Cart</h2>
+</main>
 </body>
 </html>
