@@ -4,7 +4,6 @@
     <meta charset="UTF-8">
     <title>Shopping Cart</title>
     <link rel="stylesheet" type="text/css" href="style.css">
-    <script src="cart.js"></script>
     <script src="cookies.js"></script>
 </head>
 <body>
@@ -45,13 +44,24 @@
 </nav>
 <main>
     <h2>Shopping Cart</h2>
+    <div id="display">
+
+    </div>
     <script>
         var i;
+        var output = "";
         var list;
-        list = Cookie.get("guest");
+        list = JSON.parse(Cookie.get("guest"));
+        // for (i = 0; i < list.length; i++) {
+        //     console.log(list[i]);
+        //     console.log(list[i].title + " " + list[i].price);
+        // }
         for (i = 0; i < list.length; i++) {
-            console.log(list[i]);
+            // console.log(list.length);
+            output += list[i].title + " $" + list[i].price;
+
         }
+        document.getElementById("display").innerHTML = output;
     </script>
 </main>
 </body>

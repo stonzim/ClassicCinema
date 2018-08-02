@@ -11,10 +11,10 @@ var Cart = (function(){
         // console.log(JSON.stringify(Movie));
         // Cookie.set(JSON.stringify(Movie));
         if (Cookie.get("guest") === null) {
-            list.push(JSON.stringify(Movie));
+            list.push(Movie);
         } else {
             list=JSON.parse(Cookie.get("guest"));
-            list.push(JSON.stringify(Movie));
+            list.push(Movie);
         }
         // alert(list);
         Cookie.set("guest", JSON.stringify(list), 1);
