@@ -202,11 +202,31 @@ var SampleValidator = (function () {
         messages = [];
 
         // Validate Address Details
+        var name = document.getElementById('deliveryName').value;
+        if (!checkNotEmpty(name)) {
+            messages.push("You must enter a delivery name");
+        }
 
-        // TO BE ADDED
-        var blah = document.getElementById("deliveryName");
-        if (!checkNotEmpty(blah)) {
-            messages.push("You're bad");
+        var addy = document.getElementById('deliveryAddress1').value;
+        if (!checkNotEmpty(addy)) {
+            messages.push("You must enter a delivery address");
+        }
+
+        var city = document.getElementById('deliveryCity').value;
+        if (!checkNotEmpty(city)) {
+            messages.push("You must enter a city");
+        }
+
+        var code = document.getElementById('deliveryPostcode').value;
+        var pattern1 = /^[0-9]{4}$/;
+        if (!pattern1.test(code)) {
+                messages.push("You must enter a valid NZ postcode");
+        }
+
+        var email = document.getElementById('deliveryEmail').value;
+        var pattern2 = /^[a-zA-Z0-9_\-]+@[a-zA-Z0-9_\-]+(\.[a-zA-Z0-9_\-]+)*$/;
+        if (!pattern2.test(email)) {
+            messages.push("You must enter a valid email address");
         }
 
         // Validate Credit Card Details
