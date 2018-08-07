@@ -223,6 +223,26 @@ var SampleValidator = (function () {
                 messages.push("You must enter a valid NZ postcode");
         }
 
+        // checkDigits(document.getElementById('deliveryPostcode').onkeypress);
+
+        // function checkNumbers(keyPressEvent) {
+        //     var keyCode = keyPressEvent.keyCode;
+        //     // var pattern = /^[0-9]$/;
+        //     // if (keyCode !== pattern) {
+        //     //     return false;
+        //     if (keyCode < "0".charCodeAt(0)) {
+        //         return false;
+        //     } else if (keyCode > "9".charCodeAt(0)) {
+        //         return false;
+        //     } else {
+        //         return true;
+        //     }
+        // }
+        // document.getElementById("deliveryPostcode").onkeypress = checkNumbers();
+
+
+
+
         var email = document.getElementById('deliveryEmail').value;
         var pattern2 = /^[a-zA-Z0-9_\-]+@[a-zA-Z0-9_\-]+(\.[a-zA-Z0-9_\-]+)*$/;
         if (!pattern2.test(email)) {
@@ -249,9 +269,9 @@ var SampleValidator = (function () {
 
         if (messages.length === 0) {
             // Checkout successful, clear the cart
-            Cookie.clear("cart");
+            Cookie.clear("guest");
             // Display a friendly message
-            document.getElementById("main").innerHTML = "<p>Thank you for your order</p>";
+            document.getElementById("display").innerHTML = "<p>Thank you for your order</p>";
         } else {
             // Report the error messages
             errorHTML = "<p><strong>There were errors processing your form</strong></p>";
