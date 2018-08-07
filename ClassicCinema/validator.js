@@ -271,6 +271,7 @@ var SampleValidator = (function () {
             Cookie.clear("guest");
             // Display a friendly message
             document.getElementById("display").innerHTML = "<p>Thank you for your order</p>";
+            document.getElementById("checkoutForm").style.display = "none";
         } else {
             // Report the error messages
             errorHTML = "<p><strong>There were errors processing your form</strong></p>";

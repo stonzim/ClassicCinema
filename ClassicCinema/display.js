@@ -26,9 +26,6 @@ var Display = (function() {
     return pub;
 }());
 
-// if (document.getElementById) {
-//     window.onload = Display.setup;
-// }
 if (window.addEventListener) {
     window.addEventListener('load', Display.setup);
 } else if (window.attachEvent) {
