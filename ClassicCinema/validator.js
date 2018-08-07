@@ -223,7 +223,7 @@ var SampleValidator = (function () {
                 messages.push("You must enter a valid NZ postcode");
         }
 
-        // checkDigits(document.getElementById('deliveryPostcode').onkeypress);
+        //checkDigits(document.getElementById('deliveryPostcode').onkeypress);
 
         // function checkNumbers(keyPressEvent) {
         //     var keyCode = keyPressEvent.keyCode;
@@ -238,7 +238,6 @@ var SampleValidator = (function () {
         //         return true;
         //     }
         // }
-        // document.getElementById("deliveryPostcode").onkeypress = checkNumbers();
 
 
 
@@ -300,6 +299,8 @@ var SampleValidator = (function () {
         form.onsubmit = validateCheckout;
         document.getElementById("cardNumber").onkeypress = checkKeyIsDigit;
         document.getElementById("cardValidation").onkeypress = checkKeyIsDigit;
+        document.getElementById("deliveryPostcode").onkeypress = checkKeyIsDigit;
+
     };
 
     // Expose public interface
