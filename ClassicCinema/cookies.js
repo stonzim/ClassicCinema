@@ -11,9 +11,7 @@ var Cookie = (function () {
         } else {
             expires = "";
         }
-        //alert( name + "=" + value + expires + "; path=/");
         document.cookie = encodeURIComponent(name) + "=" + encodeURIComponent(value) + expires + "; path=/";
-        // alert(document.cookie);
     };
     pub.get = function(name) {
         var nameEq, cookies, cookie, i;

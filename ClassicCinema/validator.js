@@ -223,25 +223,6 @@ var SampleValidator = (function () {
                 messages.push("You must enter a valid NZ postcode");
         }
 
-        //checkDigits(document.getElementById('deliveryPostcode').onkeypress);
-
-        // function checkNumbers(keyPressEvent) {
-        //     var keyCode = keyPressEvent.keyCode;
-        //     // var pattern = /^[0-9]$/;
-        //     // if (keyCode !== pattern) {
-        //     //     return false;
-        //     if (keyCode < "0".charCodeAt(0)) {
-        //         return false;
-        //     } else if (keyCode > "9".charCodeAt(0)) {
-        //         return false;
-        //     } else {
-        //         return true;
-        //     }
-        // }
-
-
-
-
         var email = document.getElementById('deliveryEmail').value;
         var pattern2 = /^[a-zA-Z0-9_\-]+@[a-zA-Z0-9_\-]+(\.[a-zA-Z0-9_\-]+)*$/;
         if (!pattern2.test(email)) {
