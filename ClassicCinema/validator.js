@@ -1,3 +1,4 @@
+/* global $ */
 /**
  * Validation functions for the Classic Cinema site.
  *
@@ -202,28 +203,28 @@ var SampleValidator = (function () {
         messages = [];
 
         // Validate Address Details
-        var name = document.getElementById('deliveryName').value;
+        var name = $("#deliveryName").val();
         if (!checkNotEmpty(name)) {
             messages.push("You must enter a delivery name");
         }
 
-        var addy = document.getElementById('deliveryAddress1').value;
+        var addy = $("#deliveryAddress1").val();
         if (!checkNotEmpty(addy)) {
             messages.push("You must enter a delivery address");
         }
 
-        var city = document.getElementById('deliveryCity').value;
+        var city = $("#deliveryCity").val();
         if (!checkNotEmpty(city)) {
             messages.push("You must enter a city");
         }
 
-        var code = document.getElementById('deliveryPostcode').value;
+        var code = $("#deliveryPostcode").val();
         var pattern1 = /^[0-9]{4}$/;
         if (!pattern1.test(code)) {
                 messages.push("You must enter a valid NZ postcode");
         }
 
-        var email = document.getElementById('deliveryEmail').value;
+        var email = $("#deliveryEmail").val;
         var pattern2 = /^[a-zA-Z0-9_\-]+@[a-zA-Z0-9_\-]+(\.[a-zA-Z0-9_\-]+)*$/;
         if (!pattern2.test(email)) {
             messages.push("You must enter a valid email address");
@@ -232,27 +233,28 @@ var SampleValidator = (function () {
         // Validate Credit Card Details
 
         // This depends a bit on the type of card, so get that first
-        cardType = document.getElementById("cardType").value;
+        cardType = $("#cardType").val();
 
         // Credit card number validation
-        cardNumber = document.getElementById("cardNumber").value;
+        cardNumber = $("#cardNumber").val();
+
         checkCreditCardNumber(cardType, cardNumber, messages);
 
         // Expiry date validation
-        cardMonth = document.getElementById("cardMonth").value;
-        cardYear = document.getElementById("cardYear").value;
+        cardMonth = $("#cardMonth").val();
+        cardYear = $("#cardYear").val();
         checkCreditCardDate(cardMonth, cardYear, messages);
 
         // CVC validation
-        cardValidation = document.getElementById("cardValidation").value;
+        cardValidation = $("#cardValidation").val();
         checkCreditCardValidation(cardType, cardValidation, messages);
 
         if (messages.length === 0) {
             // Checkout successful, clear the cart
             Cookie.clear("guest");
             // Display a friendly message
-            document.getElementById("display").innerHTML = "<p>Thank you for your order</p>";
-            document.getElementById("checkoutForm").style.display = "none";
+            $("#display").html("Thank you for your order");
+            $("#checkoutForm").css({"display": "none"});
         } else {
             // Report the error messages
             errorHTML = "<p><strong>There were errors processing your form</strong></p>";
@@ -261,7 +263,7 @@ var SampleValidator = (function () {
                 errorHTML += "<li>" + msg;
             });
             errorHTML += "</ul>";
-            document.getElementById("errors").innerHTML = errorHTML;
+            $("#errors").html(errorHTML);
         }
 
         // Stop the form from submitting, which would trigger a page load
@@ -279,9 +281,9 @@ var SampleValidator = (function () {
     pub.setup = function () {
         var form = document.getElementById("checkoutForm");
         form.onsubmit = validateCheckout;
-        document.getElementById("cardNumber").onkeypress = checkKeyIsDigit;
-        document.getElementById("cardValidation").onkeypress = checkKeyIsDigit;
-        document.getElementById("deliveryPostcode").onkeypress = checkKeyIsDigit;
+        $("#cardNumber").keypress(checkKeyIsDigit);
+        $("#cardValidation").keypress(checkKeyIsDigit);
+        $("#deliveryPostcode").keypress(checkKeyIsDigit);
 
     };
 
@@ -289,10 +291,4 @@ var SampleValidator = (function () {
     return pub;
 }());
 
-if (window.addEventListener) {
-    window.addEventListener('load', SampleValidator.setup);
-} else if (window.attachEvent) {
-    window.attachEvent('onload', SampleValidator.setup);
-} else {
-    alert("Could not attach 'SampleValidator.setup' to the 'window.onload' event");
-}
+$(document).ready(SampleValidator.setup);
