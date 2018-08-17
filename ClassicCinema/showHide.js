@@ -1,30 +1,35 @@
+/* global $ */
 var ShowHide = (function () {
     "use strict";
 
     var pub = {};
 
+    // function showHideDetails() {
+    //
+    //     var paragraphs, picture, p;
+    //     var theFilm = this.parentNode;
+    //
+    //
+    //     paragraphs = theFilm.getElementsByTagName("p");
+    //     picture = theFilm.getElementsByTagName("img")[0];
+    //
+    //     for (p = 0; p < paragraphs.length; p += 1) {
+    //         if (paragraphs[p].style.display === "none") {
+    //             paragraphs[p].style.display = "block";
+    //         } else {
+    //             paragraphs[p].style.display = "none";
+    //         }
+    //     }
+    //
+    //     if (picture.style.display === "none") {
+    //         picture.style.display = "block";
+    //     } else {
+    //         picture.style.display = "none";
+    //     }
+    // }
+
     function showHideDetails() {
-
-        var paragraphs, picture, p;
-        var theFilm = this.parentNode;
-
-
-        paragraphs = theFilm.getElementsByTagName("p");
-        picture = theFilm.getElementsByTagName("img")[0];
-
-        for (p = 0; p < paragraphs.length; p += 1) {
-            if (paragraphs[p].style.display === "none") {
-                paragraphs[p].style.display = "block";
-            } else {
-                paragraphs[p].style.display = "none";
-            }
-        }
-
-        if (picture.style.display === "none") {
-            picture.style.display = "block";
-        } else {
-            picture.style.display = "none";
-        }
+        $(this).siblings().toggle();
     }
 
     pub.setup = function() {
