@@ -1,16 +1,24 @@
 <!DOCTYPE html>
 
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/html">
 
 <head>
     <title>The Harbour Hotel</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="jquery-3.3.1.min.js"></script>
+    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
+    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
+    <script>
+        $( function() {
+            $( ".datepicker" ).datepicker();
+        } );
+    </script>
 </head>
 
 <body>
 
+<div id="topBar">
 <nav>
     <ul>
         <a href="index.html">Home</a>
@@ -18,6 +26,11 @@
         <a href="scifi.html">Rooms</a>
     </ul>
 </nav>
+    <div id="dates">
+        <p><span id="stay">When would you like to stay?</span><input type="date" placeholder="Arrival Date">
+        <input type="date" placeholder="Departure Date"></p>
+    </div>
+</div>
 
 <header>
     <h1>Welcome to<br><span id="main">The Harbour Hotel</span></h1>
