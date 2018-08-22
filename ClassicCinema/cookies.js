@@ -1,5 +1,5 @@
 var Cookie = (function () {
-    "use strict"
+    "use strict";
     var pub = {};
     pub.set = function(name, value, hours) {
 
