@@ -9,11 +9,9 @@
     <script src="jquery-3.3.1.min.js"></script>
     <script src="https://code.jquery.com/jquery-1.12.4.js"></script>
     <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>
-    <script>
-        $( function() {
-            $( ".datepicker" ).datepicker();
-        } );
-    </script>
+    <script src="date.js"></script>
+
+
 </head>
 
 <body>
@@ -27,8 +25,8 @@
     </ul>
 </nav>
     <div id="dates">
-        <p><span id="stay">When would you like to stay?</span><input type="date" placeholder="Arrival Date">
-        <input type="date" placeholder="Departure Date"></p>
+        <p><span id="stay">When would you like to stay?</span><input type="date" placeholder="Arrival Date" id="arrival">
+        <input type="date" placeholder="Departure Date" id="departure"></p>
     </div>
 </div>
 
