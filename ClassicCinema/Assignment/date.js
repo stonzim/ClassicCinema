@@ -9,22 +9,25 @@ code taken and modified from:
 
 function reverse(s){
     "use strict";
+
     var list;
     list = s.split("-");
     return list.reverse().join("-");
 }
 
-function checkToday(time) {
+function checkToday(element, time) {
     "use strict";
+
     var date;
     var today = new Date();
     var dd = today.getDate();
     var mm = today.getMonth() + 1;
     var yyyy = today.getFullYear();
+
     if (time === 'arrival') {
-        date = $(".arrival").val();
+        date = $(element).val();
     } else {
-        date = $(".departure").val();
+        date = $(element).val();
     }
 
     date = reverse(date);
@@ -42,9 +45,9 @@ function checkToday(time) {
     if (date.localeCompare(today) === -1) {
         alert("Please enter a date not before today");
         if (time === 'arrival') {
-            $(".arrival").val("");
+            $(element).val(""); //resetting values
         } else {
-            $(".departure").val("");
+            $(element).val("");
         }
         return;
     }
@@ -52,9 +55,7 @@ function checkToday(time) {
 
 function compareDates() {
     "use strict";
-    // var arrive = document.getElementById("arrival").value;
     var arrive = $(".arrival").val();
-    // var depart = document.getElementById("departure").value;
     var depart = $(".departure").val();
 
     if (arrive === "") {

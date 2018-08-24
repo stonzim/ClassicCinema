@@ -47,9 +47,11 @@
                     <p>
                         Room costs $<span class="price">50.00</span> per night. <br>
                         <span class="stay">When would you like to stay?</span>
-                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday('arrival'), compareDates()">
-                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday('depart'), compareDates()">
-                        <input type="button" value="Check Availability" class="check">
+                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday(this, 'arrival'), compareDates()">
+                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday(this, 'depart'), compareDates()">
+                        <input type="button" value="Check Availability" onclick="Bookings.checkAvailability(this, 'Single Room')" class="check">
+                        <span class="currentBookings">
+                        </span>
                         <input type="button" value="Book Room" onclick="addToBookings(this)" class="book">
                     </p>
                 </div>
@@ -67,10 +69,12 @@
                     <p>
                         Room costs $<span class="price">90.00</span> per night. <br>
                         <span class="stay">When would you like to stay?</span>
-                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday(), compareDates()">
-                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday(), compareDates()">
-                        <input type="button" value="Check Availability" class="check">
-                        <input type="button" value="Book Room" class="book">
+                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday(this, 'arrival'), compareDates()">
+                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday(this, 'depart'), compareDates()">
+                        <input type="button" value="Check Availability" onclick="Bookings.checkAvailability(this, 'Double Room')" class="check">
+                    <span class="currentBookings">
+                    </span>
+                    <input type="button" value="Book Room" onclick="addToBookings(this)" class="book">
                     </p>
                 </div>
             </section>
@@ -86,10 +90,12 @@
                     <p>
                         Room costs $<span class="price">130.00</span> per night. <br>
                         <span class="stay">When would you like to stay?</span>
-                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday(), compareDates()">
-                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday(), compareDates()">
-                        <input type="button" value="Check Availability" class="check">
-                        <input type="button" value="Book Room" class="book">
+                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday(this, 'arrival'), compareDates()">
+                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday(this, 'depart'), compareDates()">
+                        <input type="button" value="Check Availability" onclick="Bookings.checkAvailability(this, 'Triple Room')" class="check">
+                    <span class="currentBookings">
+                    </span>
+                    <input type="button" value="Book Room" onclick="addToBookings(this)" class="book">
                     </p>
                 </div>
             </section>
@@ -109,10 +115,12 @@
                     <p>
                         Room costs $<span class="price">170.00</span> per night. <br>
                         <span class="stay">When would you like to stay?</span>
-                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday(), compareDates()">
-                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday(), compareDates()">
-                        <input type="button" value="Check Availability" class="check">
-                        <input type="button" value="Book Room" class="book">
+                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday(this, 'arrival'), compareDates()">
+                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday(this, 'depart'), compareDates()">
+                        <input type="button" value="Check Availability" onclick="Bookings.checkAvailability(this, 'Queen Room')" class="check">
+                    <span class="currentBookings">
+                    </span>
+                    <input type="button" value="Book Room" onclick="addToBookings(this)" class="book">
                     </p>
                 </div>
             </section>
@@ -131,10 +139,12 @@
                     <p>
                         Room costs $<span class="price">250.00</span> per night. <br>
                         <span class="stay">When would you like to stay?</span>
-                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday(), compareDates()">
-                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday(), compareDates()">
-                        <input type="button" value="Check Availability" class="check">
-                        <input type="button" value="Book Room" class="book">
+                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday(this, 'arrival'), compareDates()">
+                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday(this, 'depart'), compareDates()">
+                        <input type="button" value="Check Availability" onclick="Bookings.checkAvailability(this, 'King Room')" class="check">
+                        <span class="currentBookings">
+                        </span>
+                        <input type="button" value="Book Room" onclick="addToBookings(this)" class="book">
                     </p>
                 </div>
             </section>
@@ -151,10 +161,12 @@
                     <p>
                         Room costs $<span class="price">400.00</span> per night. <br>
                         <span class="stay">When would you like to stay?</span>
-                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday(), compareDates()">
-                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday(), compareDates()">
-                        <input type="button" value="Check Availability" class="check">
-                        <input type="button" value="Book Room" class="book">
+                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday(this, 'arrival'), compareDates()">
+                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday(this, 'depart'), compareDates()">
+                        <input type="button" value="Check Availability" onclick="Bookings.checkAvailability(this, 'Suite')" class="check">
+                        <span class="currentBookings">
+                        </span>
+                        <input type="button" value="Book Room" onclick="addToBookings(this)" class="book">
                     </p>
                 </div>
             </section>

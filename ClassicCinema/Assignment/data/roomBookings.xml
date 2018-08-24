@@ -1,7 +1,24 @@
 <bookings>
     
+<booking>
+        <number>666</number>
+	<roomType>Single Room</roomType>
+        <name>Mr Satan</name>
+        <checkin>
+            <day>25</day>
+            <month>8</month>
+            <year>2018</year>
+        </checkin>
+        <checkout>
+            <day>29</day>
+            <month>8</month>
+            <year>2018</year>
+        </checkout>
+    </booking>
+
     <booking>
         <number>101</number>
+	<roomType>Double Room</roomType>
         <name>Mr and Mrs Smith</name>
         <checkin>
             <day>15</day>
@@ -17,6 +34,7 @@
         
     <booking>
         <number>203</number>
+	<roomType>Queen Room</roomType>
         <name>Alice, Bob, and family</name>
         <checkin>
             <day>12</day>
@@ -32,6 +50,7 @@
     
     <booking>
         <number>204</number>
+	<roomType>King Room</roomType>
         <name>Alice, Bob, and family</name>
         <checkin>
             <day>12</day>
@@ -47,6 +66,7 @@
     
     <booking>
         <number>203</number>
+	<roomType>Suite</roomType>
         <name>Carol and Dave</name>
         <checkin>
             <day>17</day>
