@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>The Harbour Hotel</title>
+    <meta charset="utf-8">
+    <link rel="stylesheet" type="text/css" href="style.css">
+    <script src="jquery-3.3.1.min.js"></script>
+    <script src="date.js"></script>
+    <script src="bookings.js"></script>
+    <script src="cart.js"></script>
+    <script src="cookies.js"></script>
+</head>
+
+<body>
+
+    <div id="topBar">
+        <nav>
+            <ul>
+                <a href="index.html">Home</a>
+                <a href="location.html">Location and Contact</a>
+                <a href="rooms.html">Rooms</a>
+                <a href="booking.html">Your Booking</a>
+            </ul>
+        </nav>
+
+    </div>
+
+    <header id="mainTitle">
+        <h1><span id="main">Rooms and Suites</span></h1>
+    </header>
+    <main>
+        <h2>At The Harbour Hotel, we have a selection of rooms to suite your needs</h2>
+        <div id="leftRooms">
+            <section class="room">
+                <h3>Single Room</h3>
+                <div class="roomText">
+                    <p>Our single rooms come with just one single bed, which is perfect for the lone traveller.
+                        As with all our rooms, there is an ensuite, a TV, free wifi and a phone to call for room service.
+                    </p>
+                </div>
+
+                <img src="images/rooms/single.jpg" width="400" height="300" alt="single room">
+
+                <div class="dates">
+                    <p>
+                        Room costs $<span class="price">50.00</span> per night. <br>
+                        <span class="stay">When would you like to stay?</span>
+                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday('arrival'), compareDates()">
+                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday('depart'), compareDates()">
+                        <input type="button" value="Check Availability" class="check">
+                        <input type="button" value="Book Room" onclick="addToBookings(this)" class="book">
+                    </p>
+                </div>
+            </section>
+
+            <section class="room">
+                <h3>Double Room</h3>
+                <div class="roomText">
+                    <p>Our double rooms come with two single beds and are perfect for 2 people. As with all our rooms,
+                        there is an ensuite, a TV, free wifi and a phone to call for room service.
+                    </p>
+                </div>
+                <img src="images/rooms/double.jpg" width="400" height="300" alt="double room">
+                <div class="dates">
+                    <p>
+                        Room costs $<span class="price">90.00</span> per night. <br>
+                        <span class="stay">When would you like to stay?</span>
+                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday(), compareDates()">
+                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday(), compareDates()">
+                        <input type="button" value="Check Availability" class="check">
+                        <input type="button" value="Book Room" class="book">
+                    </p>
+                </div>
+            </section>
+            <section class="room">
+                <h3>Triple Room</h3>
+                <div class="roomText">
+                    <p>Our triple rooms come with three single beds and are perfect for 3 people who are traveling together.
+                        As with all our rooms, there is an ensuite, a TV, free wifi and a phone to call for room service.
+                    </p>
+                </div>
+                <img src="images/rooms/triple.jpg" width="400" height="300" alt="triple room">
+                <div class="dates">
+                    <p>
+                        Room costs $<span class="price">130.00</span> per night. <br>
+                        <span class="stay">When would you like to stay?</span>
+                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday(), compareDates()">
+                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday(), compareDates()">
+                        <input type="button" value="Check Availability" class="check">
+                        <input type="button" value="Book Room" class="book">
+                    </p>
+                </div>
+            </section>
+        </div>
+        <div id="rightRooms">
+            <section class="room">
+                <h3>Queen Room</h3>
+                <div class="roomText">
+
+                <p>Our queen rooms come with one queen-sized bed and are perfect for a couple.
+                    As with all our rooms, there is an ensuite, a TV, free wifi and a phone to call for room service.
+                </p>
+                </div>
+
+                <img src="images/rooms/queen.jpg" width="400" height="300"alt="queen room">
+                <div class="dates">
+                    <p>
+                        Room costs $<span class="price">170.00</span> per night. <br>
+                        <span class="stay">When would you like to stay?</span>
+                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday(), compareDates()">
+                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday(), compareDates()">
+                        <input type="button" value="Check Availability" class="check">
+                        <input type="button" value="Book Room" class="book">
+                    </p>
+                </div>
+            </section>
+            <section class="room">
+                <h3>King Room</h3>
+                <div class="roomText">
+
+                <p>Our king rooms are bigger than our queen rooms to allow for more space and come with one king-sized
+                    bed, a small bed and a small kitchen; perfect for a couple or a small family. As with all our rooms,
+                    there is an ensuite, a TV, free wifi and a phone to call for room service.
+                </p>
+                </div>
+
+                <img src="images/rooms/king.jpg" width="400" height="300" alt="king room">
+                <div class="dates">
+                    <p>
+                        Room costs $<span class="price">250.00</span> per night. <br>
+                        <span class="stay">When would you like to stay?</span>
+                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday(), compareDates()">
+                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday(), compareDates()">
+                        <input type="button" value="Check Availability" class="check">
+                        <input type="button" value="Book Room" class="book">
+                    </p>
+                </div>
+            </section>
+            <section class="room">
+                <h3>Suite</h3>
+                <div class="roomText">
+                    <p>Our suites are the largest rooms we have to offer. The suite comes with two king-sized beds, a small
+                        bed, a living area and a kitchen and is suitable for a family or small group of friends. As with all
+                        our rooms, there is an ensuite, a TV, free wifi and a phone to call for room service.
+                    </p>
+                </div>
+                <img src="images/rooms/suite.jpg" width="400" height="300" alt="suite">
+                <div class="dates">
+                    <p>
+                        Room costs $<span class="price">400.00</span> per night. <br>
+                        <span class="stay">When would you like to stay?</span>
+                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday(), compareDates()">
+                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday(), compareDates()">
+                        <input type="button" value="Check Availability" class="check">
+                        <input type="button" value="Book Room" class="book">
+                    </p>
+                </div>
+            </section>
+        </div>
+
+    </main>
+
+</body>
+</html>

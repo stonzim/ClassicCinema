@@ -1,10 +1,11 @@
 /* global $, alert */
 
+
 var Map = (function() {
     "use strict";
     var pub = {};
 
-    var hotel, rest1, rest2, rest3, cast, city, walk;
+    var map, hotel, rest1, rest2, rest3, cast, city, walk;
 
     function centreMap() {
         var markerLocation, markerBounds;
@@ -27,8 +28,16 @@ var Map = (function() {
         map.fitBounds(markerBounds);
     }
 
-    function onMapClick(e) {
-        alert("You clicked the map at " + e.latlng);
+    // function onMapClick(e) {
+    //     alert("You clicked the map at " + e.latlng);
+    // }
+    function visibility() {
+        var opacity = this.options.opacity;
+        if (opacity === 1) {
+            this.setOpacity(0);
+        } else {
+            this.setOpacity(1);
+        }
     }
 
     pub.setup = function() {
@@ -38,6 +47,9 @@ var Map = (function() {
         L.tileLayer('https://{s}.tile.openstreetmap.org/{z}/{x}/{y}.png',
         { maxZoom: 18, attribution: 'Map data &copy; ' + '<a href="http://www.openstreetmap.org/copyright">' +
             'OpenStreetMap contributors</a> CC-BY-SA'}).addTo(map);
+
+
+
 
         hotel = L.marker([-45.856618, 170.598675]).addTo(map);
         hotel.bindPopup("<b class=\'popTitle\'>The Harbour Hotel</b>" +
@@ -68,8 +80,11 @@ var Map = (function() {
             "<img class='popPic' src=\"images/walks.jpg\" width = '150' height='100' alt=\"Forest\">" +
             "<p class='popMain'>Specialising in Hitchcock Cinema</p>");
 
-        map.on('click', onMapClick);
-    }
+        var list = [hotel, rest1, rest2, rest3, cast, city, walk];
+        $(list).click(visibility);
+
+        // map.on('click', onMapClick);
+    };
     return pub;
 }());
 

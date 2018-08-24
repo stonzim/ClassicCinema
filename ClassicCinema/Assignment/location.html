@@ -6,8 +6,9 @@
         <title>Location</title>
         <link rel="stylesheet" href="style.css">
         <meta charset="utf-8">
-        <link rel="stylesheet" href="leaflet.css"/>
+
         <script src="jquery-3.3.1.min.js"></script>
+        <link rel="stylesheet" href="leaflet.css"/>
         <script src="leaflet.js"></script>
         <script src="map.js"></script>
     </head>
@@ -18,16 +19,10 @@
             <ul>
                 <a href="index.html">Home</a>
                 <a href="location.html">Location and Contact</a>
-                <a href="scifi.html">Rooms</a>
+                <a href="rooms.html">Rooms</a>
+                <a href="booking.html">Your Booking</a>
             </ul>
         </nav>
-        <div id="dates">
-            <p>
-                <span id="stay">When would you like to stay?</span>
-                <input type="date" placeholder="Arrival Date" id="arrival" oninput="checkToday(), compareDates()">
-                <input type="date" placeholder="Departure Date" id="departure" oninput="checkToday(), compareDates()">
-            </p>
-        </div>
     </div>
         <header>
             <h1>Location and<br><span id="main">Contact Details</span></h1>
@@ -37,6 +32,7 @@
             <figure id="map">
                 <img src="images/map.png" alt="map">
             </figure>
+
 
             <div class="contact">
                 <h3>Hotel</h3>

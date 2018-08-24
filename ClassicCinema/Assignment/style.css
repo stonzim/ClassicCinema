@@ -2,13 +2,13 @@ body {
     border-radius: 20px 0px 0px 0px;
     background-color: paleturquoise;
     font-size: 10pt;
-    font-family: Verdana, sans-serif;
+    font-family: Optima, sans-serif;
     text-align: left;
     border: 1px solid black;
-
+    width: 1200px;
 }
 
-header, footer, main, #map, #left, #right, img{
+header, footer, main, #map, #leftIndex, #rightIndex, img, .room h3{
     padding: 0;
     margin: 0;
 }
@@ -22,10 +22,14 @@ header {
     border-radius: 20px 0px 0px 0px;
 }
 
+/*main {*/
+    /*width: 100%;*/
+/*}*/
+
 nav {
     border-radius: 20px 0px 0px 0px;
     overflow: hidden;
-    width: 500px;
+    width: 700px;
     float: left;
 }
 
@@ -56,10 +60,10 @@ input {
     margin: 0 15px 0 15px;
 }
 
-section {
-    float: left;
-    width: 50%;
-}
+/*section {*/
+    /*float: left;*/
+    /*!*width: 50%;*!*/
+/*}*/
 
 #topBar {
     width: 100%;
@@ -69,12 +73,12 @@ section {
     float: left;
 }
 
-#dates {
-    float: right;
+.dates {
+    /*float: right;*/
 }
 
-#stay {
-    color: white;
+.stay {
+    color: black;
     font-size: 18px;
 }
 
@@ -83,23 +87,79 @@ section {
     margin-left: 130px;
 }
 
-#left {
+#leftIndex, #rightIndex {
     width: 50%;
     float: left;
-    height: 473px;
+    height: 530px;
+
 }
 
-#right {
+/*#rightIndex {*/
+    /*width: 50%;*/
+    /*float: left;*/
+    /*height: 473px;*/
+/*}*/
+
+#leftRooms, #rightRooms {
     width: 50%;
     float: left;
-    height: 473px;
+    /*height: 500px;*/
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    /*height: 400px;*/
+    /*margin: 20px 20px 20px 20px;*/
 }
 
+/*#rightRooms {*/
+    /*width: 50%;*/
+    /*float: left;*/
+    /*height: 400px;*/
+    /*margin: 20px 20px 20px 20px;*/
+/*}*/
 #map{
     align: center;
     width: 50%;
     height:400px;
     float: left;
+}
+
+.room {
+    /*display: block;*/
+    /*margin-left: auto;*/
+    /*margin-right: auto;*/
+    /*height: 550px;*/
+    text-align: justify;
+    text-justify: inter-word;
+    padding-left: 20px;
+    padding-right: 20px;
+    /*width: 50%;*/
+    border: 1px solid black;
+    margin: 20px;
+}
+
+
+.book {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.room p {
+    text-align: center;
+}
+
+.room img {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    margin-top: 20px;
+}
+
+.roomText {
+    height: 130px;
 }
 
 .popTitle {
@@ -128,9 +188,15 @@ section {
     text-align: center;
 }
 
-main {
-    width: 100%;
+.room h3 {
+    font-size: 40px;
 }
+
+.room p {
+    font-size: 20px;
+}
+
+
 
 footer {
     font-size: 8pt;
@@ -142,19 +208,20 @@ footer {
 }
 
 h1 {
-    font-family: Optima, sans-serif;
+    font-family: inherit;
     font-size: 40pt;
     margin: 15px 0 0 30px;
     float: left;
 }
 
 h2 {
-    font-family: Optima, sans-serif;
+    font-family: inherit;
     font-size: 24pt;
     text-align: center;
 }
 
 h3 {
+    font-family: inherit;
     font-size: 12pt;
     text-align: center;
 }
