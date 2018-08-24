@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+    <head>
+        <title>Location</title>
+        <link rel="stylesheet" href="style.css">
+        <meta charset="utf-8">
+        <link rel="stylesheet" href="leaflet.css"/>
+        <script src="jquery-3.3.1.min.js"></script>
+        <script src="leaflet.js"></script>
+        <script src="map.js"></script>
+    </head>
+
+    <body>
+    <div id="topBar">
+        <nav>
+            <ul>
+                <a href="index.html">Home</a>
+                <a href="location.html">Location and Contact</a>
+                <a href="scifi.html">Rooms</a>
+            </ul>
+        </nav>
+        <div id="dates">
+            <p>
+                <span id="stay">When would you like to stay?</span>
+                <input type="date" placeholder="Arrival Date" id="arrival" oninput="checkToday(), compareDates()">
+                <input type="date" placeholder="Departure Date" id="departure" oninput="checkToday(), compareDates()">
+            </p>
+        </div>
+    </div>
+        <header>
+            <h1>Location and<br><span id="main">Contact Details</span></h1>
+        </header>
+
+        <main>
+            <figure id="map">
+                <img src="images/map.png" alt="map">
+            </figure>
+
+            <div class="contact">
+                <h3>Hotel</h3>
+                <p>
+                101 The Octagon
+                </p>
+                <p>
+                (03) 490 1234
+                </p>
+            </div>
+            <div class="contact">
+                <h3>Rest1</h3>
+                <p>
+                789 Princes St
+                </p>
+                <p>
+                (03) 490 2468
+                </p>
+            </div>
+            <div class="contact">
+                <h3>Rest2</h3>
+                <p>
+                561 Great King St
+                </p>
+                <p>
+                (03) 490 3579
+                </p>
+            </div>
+            <div class="contact">
+                <h3>Rest3</h3>
+                <p>
+                    101 The Octagon
+                </p>
+                <p>
+                    (03) 490 1234
+                </p>
+            </div>
+            <div class="contact">
+                <h3>Lanarch Castle</h3>
+                <p>
+                    789 Princes St
+                </p>
+                <p>
+                    (03) 490 2468
+                </p>
+            </div>
+            <div class="contact">
+                <h3>City</h3>
+                <p>
+                    561 Great King St
+                </p>
+                <p>
+                    (03) 490 3579
+                </p>
+            </div>
+            <div class="contact">
+                <h3>Walk</h3>
+                <p>
+                    561 Great King St
+                </p>
+                <p>
+                    (03) 490 3579
+                </p>
+            </div>
+        
+        </main>
+
+    <footer>
+        <p>
+            The Harbour Hotel is not a real hotel. This page is only to fulfil the requirements for an assignment only.
+        </p>
+        <p>
+            All images from <a href="http://commons.wikimedia.org/wiki/Main_Page">Wikimedia Commons</a> and are believed to be in the public domain.
+        </p>
+    </footer>
+
+    </body>
+</html>

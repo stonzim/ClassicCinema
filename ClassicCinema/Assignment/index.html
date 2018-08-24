@@ -17,22 +17,22 @@
             <nav>
                 <ul>
                     <a href="index.html">Home</a>
-                    <a href="classic.html">Location Map</a>
+                    <a href="location.html">Location and Contact</a>
                     <a href="scifi.html">Rooms</a>
                 </ul>
             </nav>
             <div id="dates">
-                <p><span id="stay">When would you like to stay?</span>
-                    <input type="date" min = "" placeholder="Arrival Date" id="arrival" oninput="checkToday(), compareDates()">
-                    <input type="date" placeholder="Departure Date" id="departure" oninput="checkToday(), compareDates()"></p>
+                <p>
+                    <span id="stay">When would you like to stay?</span>
+                    <input type="date" placeholder="Arrival Date" id="arrival" oninput="checkToday(), compareDates()">
+                    <input type="date" placeholder="Departure Date" id="departure" oninput="checkToday(), compareDates()">
+                </p>
             </div>
-            <!--<button onclick="compareDates()">Compare</button>-->
         </div>
 
-        <header>
+        <header id="mainTitle">
             <h1>Welcome to<br><span id="main">The Harbour Hotel</span></h1>
         </header>
-
 
         <main>
             <div id="left">
