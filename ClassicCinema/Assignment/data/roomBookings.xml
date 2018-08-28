@@ -5,12 +5,12 @@
 	<roomType>Single Room</roomType>
         <name>Mr Satan</name>
         <checkin>
-            <day>25</day>
+            <day>28</day>
             <month>8</month>
             <year>2018</year>
         </checkin>
         <checkout>
-            <day>29</day>
+            <day>30</day>
             <month>8</month>
             <year>2018</year>
         </checkout>

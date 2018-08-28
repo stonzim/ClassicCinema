@@ -3,176 +3,235 @@
 <html lang="en">
 
 <head>
-    <title>The Harbour Hotel</title>
+    <title>Our Rooms</title>
     <meta charset="utf-8">
     <link rel="stylesheet" type="text/css" href="style.css">
     <script src="jquery-3.3.1.min.js"></script>
-    <script src="date.js"></script>
+    <script src="showRooms.js"></script>
     <script src="bookings.js"></script>
+    <script src="date.js"></script>
     <script src="cart.js"></script>
     <script src="cookies.js"></script>
+    <script src="showQuality.js" defer="defer"></script>
 </head>
 
 <body>
 
     <div id="topBar">
         <nav>
-            <ul>
-                <a href="index.html">Home</a>
-                <a href="location.html">Location and Contact</a>
-                <a href="rooms.html">Rooms</a>
-                <a href="booking.html">Your Booking</a>
-            </ul>
+            <a href="index.html">Home</a>
+            <a href="location.html">Location and Contact</a>
+            <p>Rooms</p>
+            <a href="booking.html">Your Booking</a>
         </nav>
-
     </div>
 
     <header id="mainTitle">
         <h1><span id="main">Rooms and Suites</span></h1>
     </header>
     <main>
-        <h2>At The Harbour Hotel, we have a selection of rooms to suite your needs</h2>
+        <h2>At The Harbour Hotel, we have a selection of rooms to suit your needs</h2>
+        <hr id="frontLine">
+
+        /*
+            Code taken and modified from:
+            http://www.quickcleancode.com/easy-popup-overlay-with-jquery/for purposes of using a popup window.
+        */
+        <div id="overlay">
+            <div id="popup">
+                <div id="close">X</div>
+                <h2 id="qualityType"></h2>
+                <hr>
+                <div id="qualityText"></div>
+                <img id="qualityPic" src="single.jpg" width="400" height="300" alt="room quality">
+            </div>
+        </div>
         <div id="leftRooms">
+
             <section class="room">
-                <h3>Single Room</h3>
+                <h3 class="roomType">Single Room</h3>
+                <hr>
                 <div class="roomText">
-                    <p>Our single rooms come with just one single bed, which is perfect for the lone traveller.
-                        As with all our rooms, there is an ensuite, a TV, free wifi and a phone to call for room service.
-                    </p>
                 </div>
 
-                <img src="images/rooms/single.jpg" width="400" height="300" alt="single room">
-
+                <img class="roomPic" src="single.jpg" width="400" height="300" alt="single room">
                 <div class="dates">
                     <p>
-                        Room costs $<span class="price">50.00</span> per night. <br>
-                        <span class="stay">When would you like to stay?</span>
-                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday(this, 'arrival'), compareDates()">
-                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday(this, 'depart'), compareDates()">
-                        <input type="button" value="Check Availability" onclick="Bookings.checkAvailability(this, 'Single Room')" class="check">
-                        <span class="currentBookings">
-                        </span>
-                        <input type="button" value="Book Room" onclick="addToBookings(this)" class="book">
+                        The <span class="trigger" onclick="ShowQuality.getInfo(this)">Standard</span> room costs $<span class="price1">50</span>
+                        per night, or you can upgrade to the <span class="trigger" onclick="ShowQuality.getInfo(this)">Deluxe</span>
+                        for $<span class="price2">80</span> per night.
                     </p>
+                    <input type="button" value="Check Availability" onclick="Bookings.checkAvailability
+                    (this, $(this).parent().parent().find('.roomType')[0].textContent)" class="check">
+                    <div class="currentBookings">
+                    </div>
+                    <div class="stayDates">
+                        <p class="stay">When would you like to stay?<br>
+                        Arrive: <input type="date" class="arrival" oninput="checkToday(this, 'arrival'), compareDates(this, 'arrival')">
+                        Depart:<input type="date" class="departure" oninput="checkToday(this, 'depart'), compareDates(this, 'depart')">
+                        </p>
+                    </div>
+                    <div class="buttons">
+                        <input type="button" value="Book Standard" onclick="addToBookings(this, $(this).parent().parent().find('span.price1')[0].textContent)" class="bookStan">
+                        <input type="button" value="Book Deluxe" onclick="addToBookings(this, $(this).parent().parent().find('span.price2')[0].textContent)" class="bookDel">
+                    </div>
                 </div>
             </section>
 
             <section class="room">
-                <h3>Double Room</h3>
+                <h3 class="roomType">Twin Room</h3>
+                <hr>
                 <div class="roomText">
-                    <p>Our double rooms come with two single beds and are perfect for 2 people. As with all our rooms,
-                        there is an ensuite, a TV, free wifi and a phone to call for room service.
-                    </p>
                 </div>
-                <img src="images/rooms/double.jpg" width="400" height="300" alt="double room">
+
+                <img class="roomPic" src="single.jpg" width="400" height="300" alt="single room">
                 <div class="dates">
                     <p>
-                        Room costs $<span class="price">90.00</span> per night. <br>
-                        <span class="stay">When would you like to stay?</span>
-                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday(this, 'arrival'), compareDates()">
-                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday(this, 'depart'), compareDates()">
-                        <input type="button" value="Check Availability" onclick="Bookings.checkAvailability(this, 'Double Room')" class="check">
-                    <span class="currentBookings">
-                    </span>
-                    <input type="button" value="Book Room" onclick="addToBookings(this)" class="book">
+                        The <span class="trigger" onclick="ShowQuality.getInfo(this)">Standard</span> room costs $<span class="price1">80</span>
+                        per night, or you can upgrade to the <span class="trigger" onclick="ShowQuality.getInfo(this)">Deluxe</span>
+                        for $<span class="price2">110</span> per night.
                     </p>
+                    <input type="button" value="Check Availability" onclick="Bookings.checkAvailability
+                    (this, $(this).parent().parent().find('.roomType')[0].textContent)" class="check">
+                    <div class="currentBookings">
+                    </div>
+                    <div class="stayDates">
+                        <p class="stay">When would you like to stay?<br>
+                            Arrive: <input type="date" class="arrival" oninput="checkToday(this, 'arrival'), compareDates(this, 'arrival')">
+                            Depart:<input type="date" class="departure" oninput="checkToday(this, 'depart'), compareDates(this, 'depart')">
+                    </div>
+                    <div class="buttons">
+                        <input type="button" value="Book Standard" onclick="addToBookings(this, $(this).parent().parent().find('span.price1')[0].textContent)" class="bookStan">
+                        <input type="button" value="Book Deluxe" onclick="addToBookings(this, $(this).parent().parent().find('span.price2')[0].textContent)" class="bookDel">
+                    </div>
                 </div>
             </section>
             <section class="room">
-                <h3>Triple Room</h3>
+                <h3 class="roomType">Triple Room</h3>
+                <hr>
                 <div class="roomText">
-                    <p>Our triple rooms come with three single beds and are perfect for 3 people who are traveling together.
-                        As with all our rooms, there is an ensuite, a TV, free wifi and a phone to call for room service.
-                    </p>
                 </div>
-                <img src="images/rooms/triple.jpg" width="400" height="300" alt="triple room">
+
+                <img class="roomPic" src="single.jpg" width="400" height="300" alt="single room">
                 <div class="dates">
                     <p>
-                        Room costs $<span class="price">130.00</span> per night. <br>
-                        <span class="stay">When would you like to stay?</span>
-                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday(this, 'arrival'), compareDates()">
-                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday(this, 'depart'), compareDates()">
-                        <input type="button" value="Check Availability" onclick="Bookings.checkAvailability(this, 'Triple Room')" class="check">
-                    <span class="currentBookings">
-                    </span>
-                    <input type="button" value="Book Room" onclick="addToBookings(this)" class="book">
+                        The <span class="trigger" onclick="ShowQuality.getInfo(this)">Standard</span> room costs $<span class="price1">110</span>
+                        per night, or you can upgrade to the <span class="trigger" onclick="ShowQuality.getInfo(this)">Deluxe</span>
+                        for $<span class="price2">140</span> per night.
                     </p>
+                    <input type="button" value="Check Availability" onclick="Bookings.checkAvailability
+                    (this, $(this).parent().parent().find('.roomType')[0].textContent)" class="check">
+                    <div class="currentBookings">
+                    </div>
+                    <div class="stayDates">
+                        <p class="stay">When would you like to stay?<br>
+                            Arrive: <input type="date" class="arrival" oninput="checkToday(this, 'arrival'), compareDates(this, 'arrival')">
+                            Depart:<input type="date" class="departure" oninput="checkToday(this, 'depart'), compareDates(this, 'depart')">
+                    </div>
+                    <div class="buttons">
+                        <input type="button" value="Book Standard" onclick="addToBookings(this, $(this).parent().parent().find('span.price1')[0].textContent)" class="bookStan">
+                        <input type="button" value="Book Deluxe" onclick="addToBookings(this, $(this).parent().parent().find('span.price2')[0].textContent)" class="bookDel">
+                    </div>
                 </div>
             </section>
         </div>
         <div id="rightRooms">
             <section class="room">
-                <h3>Queen Room</h3>
+                <h3 class="roomType">Queen Room</h3>
+                <hr>
                 <div class="roomText">
-
-                <p>Our queen rooms come with one queen-sized bed and are perfect for a couple.
-                    As with all our rooms, there is an ensuite, a TV, free wifi and a phone to call for room service.
-                </p>
                 </div>
 
-                <img src="images/rooms/queen.jpg" width="400" height="300"alt="queen room">
+                <img class="roomPic" src="single.jpg" width="400" height="300" alt="single room">
                 <div class="dates">
                     <p>
-                        Room costs $<span class="price">170.00</span> per night. <br>
-                        <span class="stay">When would you like to stay?</span>
-                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday(this, 'arrival'), compareDates()">
-                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday(this, 'depart'), compareDates()">
-                        <input type="button" value="Check Availability" onclick="Bookings.checkAvailability(this, 'Queen Room')" class="check">
-                    <span class="currentBookings">
-                    </span>
-                    <input type="button" value="Book Room" onclick="addToBookings(this)" class="book">
+                        The <span class="trigger" onclick="ShowQuality.getInfo(this)">Standard</span> room costs $<span class="price1">130</span>
+                        per night, or you can upgrade to the <span class="trigger" onclick="ShowQuality.getInfo(this)">Deluxe</span>
+                        for $<span class="price2">170</span> per night.
                     </p>
+                    <input type="button" value="Check Availability" onclick="Bookings.checkAvailability
+                    (this, $(this).parent().parent().find('.roomType')[0].textContent)" class="check">
+                    <div class="currentBookings">
+                    </div>
+                    <div class="stayDates">
+                        <p class="stay">When would you like to stay?<br>
+                            Arrive: <input type="date" class="arrival" oninput="checkToday(this, 'arrival'), compareDates(this, 'arrival')">
+                            Depart:<input type="date" class="departure" oninput="checkToday(this, 'depart'), compareDates(this, 'depart')">
+                    </div>
+                    <div class="buttons">
+                        <input type="button" value="Book Standard" onclick="addToBookings(this, $(this).parent().parent().find('span.price1')[0].textContent)" class="bookStan">
+                        <input type="button" value="Book Deluxe" onclick="addToBookings(this, $(this).parent().parent().find('span.price2')[0].textContent)" class="bookDel">
+                    </div>
                 </div>
             </section>
             <section class="room">
-                <h3>King Room</h3>
+                <h3 class="roomType">King Room</h3>
+                <hr>
                 <div class="roomText">
 
-                <p>Our king rooms are bigger than our queen rooms to allow for more space and come with one king-sized
-                    bed, a small bed and a small kitchen; perfect for a couple or a small family. As with all our rooms,
-                    there is an ensuite, a TV, free wifi and a phone to call for room service.
-                </p>
                 </div>
 
-                <img src="images/rooms/king.jpg" width="400" height="300" alt="king room">
+                <img class="roomPic" src="single.jpg" width="400" height="300" alt="single room">
                 <div class="dates">
                     <p>
-                        Room costs $<span class="price">250.00</span> per night. <br>
-                        <span class="stay">When would you like to stay?</span>
-                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday(this, 'arrival'), compareDates()">
-                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday(this, 'depart'), compareDates()">
-                        <input type="button" value="Check Availability" onclick="Bookings.checkAvailability(this, 'King Room')" class="check">
-                        <span class="currentBookings">
-                        </span>
-                        <input type="button" value="Book Room" onclick="addToBookings(this)" class="book">
+                        The <span class="trigger" onclick="ShowQuality.getInfo(this)">Standard</span> room costs $<span class="price1">150</span>
+                        per night, or you can upgrade to the <span class="trigger" onclick="ShowQuality.getInfo(this)">Deluxe</span>
+                        for $<span class="price2">180</span> per night.
                     </p>
+                    <input type="button" value="Check Availability" onclick="Bookings.checkAvailability
+                    (this, $(this).parent().parent().find('.roomType')[0].textContent)" class="check">
+                    <div class="currentBookings">
+                    </div>
+                    <div class="stayDates">
+                        <p class="stay">When would you like to stay?<br>
+                            Arrive: <input type="date" class="arrival" oninput="checkToday(this, 'arrival'), compareDates(this, 'arrival')">
+                            Depart:<input type="date" class="departure" oninput="checkToday(this, 'depart'), compareDates(this, 'depart')">
+                    </div>
+                    <div class="buttons">
+                        <input type="button" value="Book Standard" onclick="addToBookings(this, $(this).parent().parent().find('span.price1')[0].textContent)" class="bookStan">
+                        <input type="button" value="Book Deluxe" onclick="addToBookings(this, $(this).parent().parent().find('span.price2')[0].textContent)" class="bookDel">
+                    </div>
                 </div>
             </section>
             <section class="room">
-                <h3>Suite</h3>
+                <h3 class="roomType">Suite</h3>
+                <hr>
                 <div class="roomText">
-                    <p>Our suites are the largest rooms we have to offer. The suite comes with two king-sized beds, a small
-                        bed, a living area and a kitchen and is suitable for a family or small group of friends. As with all
-                        our rooms, there is an ensuite, a TV, free wifi and a phone to call for room service.
-                    </p>
                 </div>
-                <img src="images/rooms/suite.jpg" width="400" height="300" alt="suite">
+
+                <img class="roomPic" src="single.jpg" width="400" height="300" alt="single room">
                 <div class="dates">
                     <p>
-                        Room costs $<span class="price">400.00</span> per night. <br>
-                        <span class="stay">When would you like to stay?</span>
-                        <input type="date" placeholder="Arrival Date" class="arrival" oninput="checkToday(this, 'arrival'), compareDates()">
-                        <input type="date" placeholder="Departure Date" class="departure" oninput="checkToday(this, 'depart'), compareDates()">
-                        <input type="button" value="Check Availability" onclick="Bookings.checkAvailability(this, 'Suite')" class="check">
-                        <span class="currentBookings">
-                        </span>
-                        <input type="button" value="Book Room" onclick="addToBookings(this)" class="book">
+                        The <span class="trigger" onclick="ShowQuality.getInfo(this)">Standard</span> room costs $<span class="price1">200</span>
+                        per night, or you can upgrade to the <span class="trigger" onclick="ShowQuality.getInfo(this)">Deluxe</span>
+                        for $<span class="price2">300</span> per night.
                     </p>
+                    <input type="button" value="Check Availability" onclick="Bookings.checkAvailability
+                    (this, $(this).parent().parent().find('.roomType')[0].textContent)" class="check">
+                    <div class="currentBookings">
+                    </div>
+                    <div class="stayDates">
+                        <p class="stay">When would you like to stay?<br>
+                            Arrive: <input type="date" class="arrival" oninput="checkToday(this, 'arrival'), compareDates(this, 'arrival')">
+                            Depart:<input type="date" class="departure" oninput="checkToday(this, 'depart'), compareDates(this, 'depart')">
+                    </div>
+                    <div class="buttons">
+                        <input type="button" value="Book Standard" onclick="addToBookings(this, $(this).parent().parent().find('span.price1')[0].textContent)" class="bookStan">
+                        <input type="button" value="Book Deluxe" onclick="addToBookings(this, $(this).parent().parent().find('span.price2')[0].textContent)" class="bookDel">
+                    </div>
                 </div>
             </section>
         </div>
 
     </main>
+    <footer>
+        <p>
+            The Harbour Hotel is not a real hotel. This page is only to fulfil the requirements for an assignment only.
+        </p>
+        <p>
+            All images from <a href="http://commons.wikimedia.org/wiki/Main_Page">Wikimedia Commons</a> and are believed to be in the public domain.
+        </p>
+    </footer>
 
 </body>
 </html>

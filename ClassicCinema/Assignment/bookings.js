@@ -4,11 +4,14 @@ code taken and modified from:
  */
 
 /* global $, alert */
+
 var Bookings = (function() {
     "use strict";
     var count = 0;
     var pub = {};
     var checkData;
+
+    /* Parse data, display it for staff to view */
     function parseBookings(data, target) {
         var temp = '';
 
@@ -32,11 +35,12 @@ var Bookings = (function() {
         }
     }
 
+    /* Allow customers to view current booked dates for the rooms */
      pub.checkAvailability = function(element, room) {
-        var temp = '';
+         var temp = '';
          count = 0;
          if ($(checkData).find("booking").length === 0) {
-             $(element).parent().children("span.currentBookings").html("<p>No Bookings for this room yet</p>");
+             $(element).siblings("span.currentBookings").html("<p>No Bookings for this room yet</p>");
          } else {
              $(checkData).find("booking").each(function () {
                  if (room === $(this).find("roomType")[0].textContent) {
@@ -53,24 +57,26 @@ var Bookings = (function() {
                  }
              });
              if (count === 0) {
-                 $(element).parent().children("span.currentBookings").html("<p>No Bookings for this room yet</p>");
+                 $(element).siblings("div.currentBookings").html("<p>No Bookings for this room yet</p>");
              } else {
-             $(element).parent().children("span.currentBookings").html(temp);
+                 $(element).siblings("div.currentBookings").html(temp);
             }
          }
     };
 
+    /* Checks for overlap between your entered data and current bookings */
     pub.checkOverlap = function(element) {
         var oneDay = 24*60*60*1000;
-        var room = $(element).parent().parent().parent().parent().find("h3")[0].textContent;
-        var queryStart = new Date($(".arrival").val());
-        var queryEnd = new Date($(".departure").val());
+        var room = $(element).parent().parent().parent().find("h3")[0].textContent;
+        var queryStart = new Date($(element).siblings().find(".arrival").val());
+        var queryEnd = new Date($(element).siblings().find(".departure").val());
         var flag = "true";
 
         if ($(checkData).find("booking").length !== 0) {
             $(checkData).find("booking").each(function () {
 
                 if ($(this).find("roomType")[0].textContent === room) {
+
                     var temp = $(this).find("checkin").find("year")[0].textContent + "-" +
                         $(this).find("checkin").find("month")[0].textContent + "-" +
                         $(this).find("checkin").find("day")[0].textContent;

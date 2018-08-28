@@ -1,66 +1,87 @@
 <hotelRooms>
 
     <hotelRoom>
-        <number>101</number>
-        <roomType>King</roomType>
-        <description>A lovely room with a garden patio.</description>
-        <pricePerNight>225.00</pricePerNight>
+        <roomType>Single Room</roomType>
+	<quality>Standard</quality>
+        <description>Our standard rooms are comfortable and warm.</description>
+	<image>images/rooms/singleStan.JPG</image>
     </hotelRoom>
     <hotelRoom>
-        <number>102</number>
-        <roomType>Single</roomType>
-        <description>A small room under the stairs.</description>
-        <pricePerNight>125.00</pricePerNight>
-    </hotelRoom>
-
-    <hotelRoom>
-        <number>201</number>
-        <roomType>Double</roomType>
-        <description>A standard double room</description>
-        <pricePerNight>195.00</pricePerNight>
-    </hotelRoom>
-    <hotelRoom>
-        <number>202</number>
-        <roomType>Double</roomType>
-        <description>A standard double room</description>
-        <pricePerNight>195.00</pricePerNight>
-    </hotelRoom>
-    <hotelRoom>
-        <number>203</number>
-        <roomType>Double</roomType>
-        <description>A standard double room</description>
-        <pricePerNight>195.00</pricePerNight>
-    </hotelRoom>
-    <hotelRoom>
-        <number>204</number>
-        <roomType>Twin</roomType>
-        <description>A standard twin room</description>
-        <pricePerNight>195.00</pricePerNight>
-    </hotelRoom>
-    <hotelRoom>
-        <number>205</number>
-        <roomType>Twin</roomType>
-        <description>A standard twin room</description>
-        <pricePerNight>195.00</pricePerNight>
+        <roomType>Single Room</roomType>
+	<quality>Deluxe</quality>
+        <description>Our deluxe single rooms come with a kingsized single bed, a larger 
+	TV, faster WIFI and an open phone line. Toll calls aren't included.</description>
+	<image>images/rooms/singleDel.jpg</image>
     </hotelRoom>
 
-    <hotelRoom>
-        <number>301</number>
-        <roomType>King</roomType>
-        <description>Superior room with king-size bed.</description>
-        <pricePerNight>225.00</pricePerNight>
+<hotelRoom>
+        <roomType>Twin Room</roomType>
+	<quality>Standard</quality>
+        <description>Our standard rooms are comfortable and warm.</description>
+	<image>images/rooms/twinStan.jpg</image>
     </hotelRoom>
     <hotelRoom>
-        <number>302</number>
-        <roomType>King</roomType>
-        <description>Superior room with king-size bed.</description>
-        <pricePerNight>225.00</pricePerNight>
+        <roomType>Twin Room</roomType>
+	<quality>Deluxe</quality>
+        <description>Our deluxe single rooms come with two kingsized single beds, more space in the lounge, a larger 
+	TV, faster WIFI and an open phone line. Toll calls aren't included.</description>
+	<image>images/rooms/twinDel.jpg</image>
     </hotelRoom>
-    <hotelRoom>
-        <number>303</number>
+
+<hotelRoom>
         <roomType>Triple Room</roomType>
-        <description>Two bedroom suite.</description>
-        <pricePerNight>325.00</pricePerNight>
+	<quality>Standard</quality>
+        <description>Our standard rooms are comfortable and warm.</description>
+	<image>images/rooms/tripleStan.jpg</image>
     </hotelRoom>
-    
+    <hotelRoom>
+        <roomType>Triple Room</roomType>
+	<quality>Deluxe</quality>
+        <description>Our deluxe single rooms come with three kingsized single beds, more space in the lounge, a larger 
+	TV, faster WIFI and an open phone line.</description>
+	<image>images/rooms/tripleDel.JPG</image>
+    </hotelRoom>
+
+<hotelRoom>
+        <roomType>Queen Room</roomType>
+	<quality>Standard</quality>
+        <description>Our standard rooms are comfortable and warm.</description>
+	<image>images/rooms/queenStan.jpg</image>
+    </hotelRoom>
+    <hotelRoom>
+        <roomType>Queen Room</roomType>
+	<quality>Deluxe</quality>
+        <description>Our deluxe Queen rooms actually come with a kingsized single bed, more space in the lounge, a larger 
+	TV, a stereo, faster WIFI and an open phone line.</description>
+	<image>images/rooms/queenDel.jpg</image>
+    </hotelRoom>
+
+<hotelRoom>
+        <roomType>King Room</roomType>
+	<quality>Standard</quality>
+        <description>Our standard rooms are comfortable and warm.</description>
+	<image>images/rooms/kingStan.jpg</image>
+    </hotelRoom>
+    <hotelRoom>
+        <roomType>King Room</roomType>
+	<quality>Deluxe</quality>
+        <description>Our deluxe single rooms come with kingsized beds, more space in the lounge, a larger 
+	TV, faster WIFI, an open phone line, a balcony and a BBQ.</description>
+	<image>images/rooms/kingDel.jpg</image>
+    </hotelRoom>
+
+<hotelRoom>
+        <roomType>Suite</roomType>
+	<quality>Standard</quality>
+        <description>Our standard rooms are comfortable and warm.</description>
+	<image>images/rooms/suiteStan.jpg</image>
+    </hotelRoom>
+    <hotelRoom>
+        <roomType>Suite</roomType>
+	<quality>Deluxe</quality>
+        <description>Our deluxe single rooms come with kingsized beds, more space in the lounge, a larger 
+	TV, faster WIFI, an outside patio, a bbq, air conditioning and an open phone line.</description>
+	<image>images/rooms/suiteDel.jpg</image>
+    </hotelRoom>
+
 </hotelRooms>

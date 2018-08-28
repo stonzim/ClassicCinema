@@ -1,27 +1,47 @@
 <roomTypes>
     <roomType>
+        <id>Single Room</id>
+        <description><p>Our single rooms come with just one single bed, which is perfect for 	the lone traveller. As with all our rooms, there is an ensuite, a TV, free wifi 	and a phone to call for room service.</p></description>
+	<price1>50</price1>
+        <price2>80</price2>
+	<image>images/rooms/singleDel.jpg</image>
+    </roomType>
+    <roomType>
+        <id>Twin Room</id>
+        <description>Our twin rooms come with two single beds and are perfect for 2 		people. As with all our rooms, there is an ensuite, a TV, free wifi and a phone to 	call for room service.</description>
+	<price1>80</price1>
+        <price2>110</price2>
+	<image>images/rooms/twinDel.jpg</image>
+
+    </roomType>
+    <roomType>
         <id>Triple Room</id>
-        <description>King and Single Beds</description>
-        <maxGuests>3</maxGuests>
+        <description>Our triple rooms come with three single beds and are perfect for 3 	people who are traveling together. As with all our rooms, there is an ensuite, a 	TV, free wifi and a phone to call for room service.</description>
+	<price1>110</price1>
+        <price2>140</price2>
+	<image>images/rooms/tripleDel.JPG</image>
+
     </roomType>
     <roomType>
-        <id>King</id>
-        <description>King Bed</description>
-        <maxGuests>2</maxGuests>
+        <id>Queen Room</id>
+        <description>Our queen rooms come with one queen-sized bed and are perfect for a couple.
+             	As with all our rooms, there is an ensuite, a TV, free wifi and a phone to 		call for room service.</description>
+        <price1>110</price1>
+        <price2>140</price2>
+	<image>images/rooms/queenDel.jpg</image>
     </roomType>
     <roomType>
-        <id>Double</id>
-        <description>Double Bed</description>
-        <maxGuests>2</maxGuests>
+        <id>King Room</id>
+        <description>Our king rooms are bigger than our queen rooms to allow for more 			space and come with one kingsized bed, a small bed and a small kitchen, 		perfect for a couple or a small family. As with all our rooms, there is an 		ensuite, a TV, free wifi and a phone to call for room service.</description>
+	<price1>150</price1>
+        <price2>180</price2>
+	<image>images/rooms/kingDel.jpg</image>
     </roomType>
     <roomType>
-        <id>Twin</id>
-        <description>Twin Single Beds</description>
-        <maxGuests>2</maxGuests>
-    </roomType>
-    <roomType>
-        <id>Single</id>
-        <description>Single Bed</description>
-        <maxGuests>1</maxGuests>
+        <id>Suite</id>
+        <description>Our suites are the largest rooms we have to offer. The suite comes with two 		king-sized beds, a small bed, a living area and a kitchen and is suitable for 		a family or small group of friends. As with all our rooms, there is an 			ensuite, a TV, free wifi and a phone to call for room service.</description>
+	<price1>200</price1>
+        <price2>300</price2>
+	<image>images/rooms/suiteDel.jpg</image>
     </roomType>
 </roomTypes>

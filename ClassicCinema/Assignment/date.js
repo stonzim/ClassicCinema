@@ -17,46 +17,39 @@ function reverse(s){
 
 function checkToday(element, time) {
     "use strict";
-
     var date;
     var today = new Date();
-    var dd = today.getDate();
-    var mm = today.getMonth() + 1;
-    var yyyy = today.getFullYear();
-
+    
     if (time === 'arrival') {
         date = $(element).val();
     } else {
-        date = $(element).val();
+        date = $(element).parent().find(".departure").val();
     }
 
-    date = reverse(date);
+    date = new Date(date);
 
-    if (dd < 10) {
-        dd = '0' + dd;
-    }
-
-    if (mm < 10) {
-        mm = '0' + mm;
-    }
-
-    today = dd + '-' + mm + '-' + yyyy;
-
-    if (date.localeCompare(today) === -1) {
+    if (date < today) {
         alert("Please enter a date not before today");
         if (time === 'arrival') {
             $(element).val(""); //resetting values
         } else {
-            $(element).val("");
+            $(element).parent().find(".departure").val("");
         }
         return;
     }
 }
 
-function compareDates() {
+function compareDates(element, time) {
     "use strict";
-    var arrive = $(".arrival").val();
-    var depart = $(".departure").val();
+    var arrive;
+    var depart;
+    if (time === 'arrival') {
+        arrive = $(element).val();
+        depart = $(element).parent().find(".departure").val();
+    } else {
+        depart = $(element).val();
+        arrive= $(element).parent().find(".arrival").val();
+    }
 
     if (arrive === "") {
         return;
@@ -68,9 +61,12 @@ function compareDates() {
 
     if(! (new Date(depart).getTime() > new Date(arrive).getTime()) ) {
         alert("Please select a departure date later than your arrival");
-        $(".departure").val("");
-        return;
-
+        if (time === 'arrival') {
+            $(element).parent().find(".departure").val("");
+            return;
+        } else {
+            $(element).val("");
+        }
     }
 }
 

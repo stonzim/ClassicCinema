@@ -30,6 +30,7 @@ var ShowHide = (function () {
 
     function showHideDetails() {
         $(this).siblings().toggle();
+        alert("oi");
     }
 
     pub.setup = function() {

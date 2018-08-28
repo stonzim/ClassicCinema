@@ -21,7 +21,7 @@ var Display = (function() {
 
         list = JSON.parse(Cookie.get("guest"));
         if (list === null) {
-            $("#display").html("No rooms currently selected");
+            $("#display").html("<p>No rooms currently selected</p>");
         } else {
             for (i = 0; i < list.length; i++) {
                 grammar = "nights";
@@ -31,11 +31,11 @@ var Display = (function() {
                 if (days === 1) {
                     grammar = "night";
                 }
-                output += "<li> You booked a " + list[i].roomType + " at $" + list[i].price +" a night, " +
+                output += "<li>You booked a " + list[i].roomType + " at $" + list[i].price +" a night, " +
                     "for " + days + " " + grammar + ", which comes to $" + days*list[i].price+ ".00</li>";
                 total += parseFloat(list[i].price)*days;
             }
-            $("#display").html(output + "Total: $" + total);
+            $("#display").html(output + "<hr id='book'> Total: $" + total);
         }
     };
     return pub;

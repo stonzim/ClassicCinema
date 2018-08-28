@@ -15,20 +15,11 @@
 
         <div id="topBar">
             <nav>
-                <ul>
-                    <a href="index.html">Home</a>
-                    <a href="location.html">Location and Contact</a>
-                    <a href="rooms.html">Rooms</a>
-                    <a href="booking.html">Your Booking</a>
-                </ul>
+                <p class="navP">Home</p>
+                <a href="location.html">Location and Contact</a>
+                <a href="rooms.html">Rooms</a>
+                <a href="booking.html">Your Booking</a>
             </nav>
-            <!--<div id="dates">-->
-                <!--<p>-->
-                    <!--<span id="stay">When would you like to stay?</span>-->
-                    <!--<input type="date" placeholder="Arrival Date" id="arrival" oninput="checkToday(), compareDates()">-->
-                    <!--<input type="date" placeholder="Departure Date" id="departure" oninput="checkToday(), compareDates()">-->
-                <!--</p>-->
-            <!--</div>-->
         </div>
 
         <header id="mainTitle">
@@ -37,36 +28,47 @@
 
         <main>
             <div id="leftIndex">
-                <h2>Our hotel is situated within the Otago Harbour</h2>
-                <section>
+                <h2>Our hotel is situated within<br>Otago Harbour</h2>
+                <hr id="frontLine">
+                <section class="frontPage">
                     <h3>Location and Scenery</h3>
+                    <hr class="subPage">
                     <p>The Harbour Hotel, is situated on the Otago Peninsula, and as such, offers a fantastic view of
                         the beautiful Otago Harbour. We are only a short distance from Lanarch Castle and Glenfalloch
                         Gardens, beaches and other beautiful areas of forestry. Otago Peninsula is also home to some
                         of New Zealand's most iconic wildlife, such as the Royal Albatross and the Yellow Eyed Penguin.
                     </p>
                 </section>
-                <section>
+                <section class="frontPage">
                     <h3>Our Services</h3>
+                    <hr class="subPage">
                     <p>At the Harbour Hotel, we offer a suite of services and facilities to ensure that you enjoy your
                         stay. Our hotel is fully equipped with a restaurant and bar and our rooms are fully serviced.
-                        Furthermore, we provide transport services to not only ensure that you enjoy the local natural
-                        beauty that the Otago Peninsula has to offer, but also the excitement of Dunedin City.
+                        Furthermore, we provide transport services to local sites and to Dunedin City.<br>
+                        Services and facilities include:
                     </p>
-                    <p> Services and facilities include:</p>
-                    <ul>
-                        <li>A range of room types to suite your needs</li>
-                        <li>An ensuite for every room</li>
-                        <li>A restaurant and fully licensed bar</li>
-                        <li>Room service</li>
-                        <li>Daily room cleaning</li>
-                        <li>Transport to local attractions and Dunedin City</li>
-                    </ul>
+                    <div class="list">
+                        <ul>
+                            <li>A range of room types to suite your needs</li>
+                            <li>An ensuite for every room</li>
+                            <li>A restaurant and fully licensed bar</li>
+                        </ul>
+                    </div>
+                    <div class="list">
+                        <ul>
+                            <li>Room service</li>
+                            <li>Daily room cleaning</li>
+                            <li>Transport to local attractions and<br>Dunedin City</li>
+                        </ul>
+                    </div>
                 </section>
             </div>
 
             <div id="rightIndex">
-                <img id="slide" width="100%">
+                <figure>
+                <img id="slide" src="Dunedin_Regent_Theatre.jpg" width="530" height="480">
+                    <figcaption>Areas of Dunedin City</figcaption>
+                </figure>
             </div>
 
         </main>

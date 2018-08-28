@@ -1,14 +1,26 @@
+html {
+    height: 100%;
+}
+
+html {
+    width: 1200px;
+    background-color: #525564;
+    color: black;
+    display: table;
+    margin: auto;
+}
+
 body {
     border-radius: 20px 0px 0px 0px;
-    background-color: paleturquoise;
+    background-color: #b8d8d8;
+    color: inherit;
     font-size: 10pt;
     font-family: Optima, sans-serif;
     text-align: left;
     border: 1px solid black;
-    width: 1200px;
 }
 
-header, footer, main, #map, #leftIndex, #rightIndex, img, .room h3{
+header, main, #map, #leftIndex, #rightIndex, img, .room h3{
     padding: 0;
     margin: 0;
 }
@@ -17,38 +29,51 @@ header {
     width: 100%;
     height: 400px;
     background-image:url('images/Dunedin.jpg');
-    background-repeat:no-repeat; /* Don't want to tile the image */
     border-bottom: 20px solid black;
     border-radius: 20px 0px 0px 0px;
 }
 
-/*main {*/
-    /*width: 100%;*/
-/*}*/
-
 nav {
     border-radius: 20px 0px 0px 0px;
-    overflow: hidden;
     width: 700px;
+    height: 56px;
     float: left;
+    padding-top: 5px;
+
 }
 
 nav a {
+    display: block;
     font-size: 20px;
+    background-color: black;
     color: white;
     text-align: center;
-    padding: 15px;
+    margin: 0px 20px 20px 20px;
+    padding: 10px;
+    float: left;
+    border-radius: 20px 0px 20px 0px;
     text-decoration: none;  /* remove underline */
 }
 
-ul {
-    padding-left: 15px;
+nav p {
+    font-size: 20px;
+    background-color: steelblue;
+    color: white;
+    text-align: center;
+    margin: 0px 20px 20px 20px;
+    padding: 10px;
+    float: left;
+    border-radius: 20px 0px 20px 0px;
+}
+
+.contactLine {
+    margin-left: 15px;
+    margin-right: 15px;
 }
 
 nav a:hover {
     color: black;
     background-color: white;
-    border-radius: 20px 0px 20px 0px;
 }
 
 nav a:active {
@@ -60,26 +85,83 @@ input {
     margin: 0 15px 0 15px;
 }
 
-/*section {*/
-    /*float: left;*/
-    /*!*width: 50%;*!*/
-/*}*/
+figcaption {
+    font-size: 20px;
+    font-family: inherit;
+    text-align: center;
+}
 
 #topBar {
     width: 100%;
     background-color: black;
+    color: white;
     height: 56px;
     border-radius: 20px 0px 0px 0px;
     float: left;
+
 }
 
-.dates {
-    /*float: right;*/
+.frontPage {
+    text-align: justify;
+    text-justify: inter-word;
+    padding-left: 20px;
+    padding-right: 20px;
+    margin: 17px;
+    color: black;
+    background-color: #7a9e9f;
+    border-radius: 20px;
+    border: 5px solid black;
+}
+
+.frontPage h3{
+    margin: 5px;
+}
+
+.frontPage p{
+    padding-bottom: 0px;
+    margin-bottom: 5px;
+}
+
+.frontPage + .frontPage {
+    height: 225px;
 }
 
 .stay {
-    color: black;
-    font-size: 18px;
+    background-color: black;
+    color: white;
+    font-size: 16px;
+    text-align: center;
+    margin: 10px;
+}
+
+.subPage {
+    margin-left: 150px;
+    margin-right: 150px;
+
+}
+
+.dates p {
+margin: 10px;
+}
+
+.currentBookings p {
+    color: darkred;
+    background-color: inherit;
+}
+
+.stayDates {
+    height: 75px;
+    margin-top:5px;
+    padding: 8px;
+    color: white;
+    background-color: black;
+    border-radius: 20px 0px 20px 0px;
+    text-align: center;
+}
+
+.roomText {
+    height: 130px;
+    font-size: 20px;
 }
 
 #main {
@@ -91,60 +173,104 @@ input {
     width: 50%;
     float: left;
     height: 530px;
-
 }
 
-/*#rightIndex {*/
-    /*width: 50%;*/
-    /*float: left;*/
-    /*height: 473px;*/
-/*}*/
+#leftIndex h2 {
+    margin: 5px;
+    padding: 5px;
+}
+
+#frontLine {
+    margin-left: 30px;
+    margin-right: 30px;
+}
+
+.list {
+    float: left;
+    padding-top: 0px;
+}
+
+#rightIndex img {
+    border-radius: 20px;
+}
+
+#display {
+    font-size: 20px;
+    text-align: center;
+}
+
+#book {
+    margin-left: 180px;
+    margin-right: 180px;
+}
+
+#showBooking {
+    font-size: 20px;
+    text-align: center;
+}
 
 #leftRooms, #rightRooms {
     width: 50%;
     float: left;
-    /*height: 500px;*/
+}
+
+.roomPic {
+    border-radius: 20px;
+    margin: 0;
+}
+
+.contacts {
+    background-color: inherit;
+    color: inherit;
+    border-radius: 20px;
+    padding: 0px;
+    height: 59px;
+    width: 140px;
     display: block;
     margin-left: auto;
     margin-right: auto;
-    /*height: 400px;*/
-    /*margin: 20px 20px 20px 20px;*/
+    margin-bottom: 5px;
 }
 
-/*#rightRooms {*/
-    /*width: 50%;*/
-    /*float: left;*/
-    /*height: 400px;*/
-    /*margin: 20px 20px 20px 20px;*/
-/*}*/
-#map{
-    align: center;
-    width: 50%;
-    height:400px;
+.contacts p {
+     margin: 5px;
+ }
+
+.contact {
+     border-radius: 20px;
+     border: 2px solid black;
+     margin: 10px;
+     width: 170px;
     float: left;
+    background-color: #7a9e9f;
+    color: inherit;
+}
+
+#logo {
+    float: left;
+    margin-left: 32px;
+}
+
+.contact h3 {
+    margin-bottom: 5px;
+}
+
+#groupContact {
+    background-color: #b8d8d8;
+    color: inherit;
+    float: left;
+    width: 50%;
 }
 
 .room {
-    /*display: block;*/
-    /*margin-left: auto;*/
-    /*margin-right: auto;*/
-    /*height: 550px;*/
     text-align: justify;
     text-justify: inter-word;
-    padding-left: 20px;
-    padding-right: 20px;
-    /*width: 50%;*/
-    border: 1px solid black;
+    padding: 20px;
     margin: 20px;
-}
-
-
-.book {
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    margin-top: 20px;
-    margin-bottom: 20px;
+    background-color: #7a9e9f;
+    color: inherit;
+    border-radius: 20px;
+    border: 5px solid black;
 }
 
 .room p {
@@ -156,10 +282,30 @@ input {
     margin-left: auto;
     margin-right: auto;
     margin-top: 20px;
+    border: 5px solid black;
 }
 
-.roomText {
-    height: 130px;
+.room h3 {
+    font-size: 40px;
+}
+
+.room p {
+    font-size: 20px;
+}
+
+#map{
+    width: 50%;
+    height:430px;
+    float: left;
+}
+
+.buttons {
+    margin: 10px 100px 10px 100px;
+}
+
+.bookStan, .bookDel {
+    float: left;
+
 }
 
 .popTitle {
@@ -179,32 +325,34 @@ input {
     clear: left;
 }
 
-.contact {
-    float: left;
-    width: 16%;
-}
-
 .contact p {
     text-align: center;
 }
 
-.room h3 {
-    font-size: 40px;
+.check {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
 }
-
-.room p {
-    font-size: 20px;
-}
-
-
 
 footer {
     font-size: 8pt;
     width: 100%;
     clear: both;
+    height: 56px;
+    padding-top: 7px;
     text-align: center;
-    border-top: 7px solid black;
-    border-bottom: 4px solid black;
+    background-color: black;
+    color: white;
+}
+
+footer a{
+    background-color: inherit;
+    color: aqua;
+}
+
+footer p{
+    margin: 10px;
 }
 
 h1 {
@@ -225,6 +373,81 @@ h3 {
     font-size: 12pt;
     text-align: center;
 }
+
+.trigger {
+    cursor: pointer;
+    background-color: inherit;
+    color: blue;
+}
+
+
+
+
+#qualityType {
+    margin: 0px;
+}
+
+#overlay {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    right: 0;
+    bottom: 0;
+    left: 0;
+    color: inherit;
+    background: rgba(0,0,0,0.8);
+    display: none;
+}
+
+#qualityText p {
+    font-size: 20px;
+    margin: 20px;
+    text-align: justify;
+    text-justify: inter-word;
+}
+
+#qualityPic {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 20px;
+    border: 5px solid black;
+    margin-top: 30px;
+}
+
+#popup {
+    color: black;
+    background-color: #7a9e9f;
+    max-width: 600px;
+    width: 80%;
+    max-height: 550px;
+    height: 80%;
+    padding: 20px;
+    position: relative;
+    margin: 20px auto;
+    border-radius: 20px 20px 20px 20px;
+}
+
+#popup p {
+    margin: 0px;
+    padding: 0px;
+}
+
+#close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    color: #000;
+    background-color: inherit;
+}
+
+ul {
+    list-style-type: none;
+}
+
+
 
 
 
